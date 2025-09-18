@@ -628,7 +628,7 @@ const commands: CommandData[] = [
                   {terminalHistory.length === 0 && (
                     <div className="terminal-welcome mb-2">
                       <p className="text-[#55f89f]">
-                        Welcome to Andre's Terminal!
+                        Welcome to Sumedh's Terminal!
                       </p>
                       <p className="text-gray-400">
                         Type 'help' to see available commands.

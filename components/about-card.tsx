@@ -154,11 +154,11 @@ export default function AboutCard() {
       >
         <div className="relative w-full max-w-md mx-auto">
           <div className="group">
-            <div className="absolute -inset-0 bg-gradient-to-r from-[#55f89f] to-[#55f8d5] blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            {/* <div className="absolute -inset-0 bg-gradient-to-r from-[#55f89f] to-[#55f8d5] blur opacity-75 group-hover:opacity-100 transition duration-300"></div> */}
             <div className="relative p-2">
               <div className="bg-black shadow-xl overflow-hidden">
                 <div className="relative aspect-square">
-                  <div className="absolute inset-0 border-4 border-[black] z-10 transition-colors duration-300 ">
+                  <div className="absolute inset-0 border-4 border-[#55f89f] z-10 transition-colors duration-300 ">
                     <Image
                       src="/profile/profile3.jpeg"
                       alt="Sumedh Badnore's Profile Picture"

@@ -9,9 +9,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://andrechandra.vercel.app'),
+  metadataBase: new URL('https://portfolio-sumedh-badnores-projects.vercel.app/'),
   title: {
-    default: 'Sumedh Jitendra Badnore',
+    default: 'Sumedh Badnore',
     template: '%s | Sumedh Jitendra Badnore',
   },
   description:
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://andrechandra.vercel.app',
+    url: 'https://portfolio-sumedh-badnores-projects.vercel.app/',
     title: 'Sumedh Jitendra Badnore - Software Engineer',
     description:
       "Sumedh Jitendra Badnore's personal website - A software engineer passionate about building innovative solutions.",
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sumedh Jitendra Badnore - Software Engineer',
+    title: 'Sumedh Badnore - Software Engineer',
     description:
       'Software engineer passionate about building innovative solutions',
     images: ['/images/og-image.png'],
   },
   icons: {
-    icon: [{ url: '/images/logo.svg', type: 'image/svg+xml' }],
-    shortcut: '/images/logo.svg',
+    icon: [{ url: '/images/logo.png', type: 'image/svg+xml' }],
+    shortcut: '/images/logo.png',
   },
   manifest: '/site.webmanifest',
   robots: {

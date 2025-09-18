@@ -455,8 +455,8 @@ export default function TerminalSection() {
             'projects --list',
             'quote --random',
             'dog --summon',
-            'game --play',
             'resume --download',
+            'game --play',
             'clear',
           ].map((c, i) => (
             <div key={i} className="mb-1">

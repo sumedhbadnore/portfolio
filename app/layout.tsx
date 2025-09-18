@@ -1,12 +1,12 @@
 import '@/styles/globals.css'
 import React from 'react'
 import type { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Footer } from '@/components/footer-component'
 import Navbar from '@/components/nav-bar'
 import { fonts } from '@/lib/fonts'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://andrechandra.vercel.app'),

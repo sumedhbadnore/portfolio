@@ -5,7 +5,7 @@ import ResumeSection from '@/components/sections/resume-section'
 export const metadata: Metadata = {
   title: 'Experiences',
   description:
-    "Explore Andre Chandra Putra's professional experience, education, and skills. View my career journey and achievements in software engineering.",
+    "Explore Sumedh Jitendra Badnore's professional experience, education, and skills. View my career journey and achievements in software engineering.",
   openGraph: {
     title: 'Resume',
     description: 'Professional experience and skills in software engineering',
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
         url: '/images/resume-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Andre Chandra Putra - Resume',
+        alt: 'Sumedh Jitendra Badnore - Resume',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Andre Chandra Putra's Resume",
+    title: "Sumedh Jitendra Badnore's Resume",
     description: 'Professional experience and skills in software engineering',
     images: ['/images/resume-og.jpg'],
   },

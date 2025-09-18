@@ -28,180 +28,340 @@ export default function TerminalSection() {
   const [previousTerminalState, setPreviousTerminalState] = useState<
     'open' | 'minimized' | 'maximized'
   >('open')
+  // Game state for "Devdle"
+  const [gameActive, setGameActive] = useState(false)
+  const [gameSecret, setGameSecret] = useState<string>('')
+  const [gameAttempts, setGameAttempts] = useState<string[]>([])
+  const maxAttempts = 6
 
-const commands: CommandData[] = [
-  {
-    cmd: 'whoami --info',
-    output: (
-      <>
-        <span className="text-[#55f89f] font-bold">Sumedh Jitendra Badnore</span>
-        <br />
-        <span className="text-gray-300">
-          Full Stack Developer | React • TypeScript • AWS • Microservices • SQL/NoSQL
-        </span>
-        <br />
-        <span className="text-gray-400">New York, USA — Open to relocation</span>
-      </>
-    ),
-  },
-  {
-    cmd: 'contact --all',
-    output: (
-      <>
-        <div className="text-blue-400">sumedhbadnore2801@gmail.com</div>
-        <div className="text-gray-300">LinkedIn: linkedin.com/in/sumedhbadnore</div>
-        <div className="text-gray-300">GitHub: github.com/sumedhbadnore</div>
-        <div className="text-gray-300">Portfolio: sumedh.dev</div>
-      </>
-    ),
-  },
-  {
-    cmd: 'availability --status',
-    output: (
-      <>
-        <span className="text-green-400 font-bold">Actively seeking full-time SWE roles</span>
-        <br />
-        <span className="text-gray-300">Hybrid NYC or Remote US preferred</span>
-      </>
-    ),
-  },
-  {
-    cmd: 'metrics --highlights',
-    output: (
-      <>
-        <div className="text-gray-300">Latency ↓ 30 percent • Uptime ↑ 25 percent • Deploy failures ↓ 40 percent</div>
-        <div className="text-gray-300">User adoption ↑ 35 percent • 3,000 plus MAU supported</div>
-      </>
-    ),
-  },
-  {
-    cmd: 'stack --top',
-    output: (
-      <>
-        <div className="text-purple-400">Frontend:</div>
-        <div className="text-gray-300">React, Next.js, TypeScript, Redux, MUI, Bootstrap</div>
-        <div className="text-purple-400 mt-2">Backend:</div>
-        <div className="text-gray-300">Node.js, Express, Java, Python, REST APIs</div>
-        <div className="text-purple-400 mt-2">Cloud & DevOps:</div>
-        <div className="text-gray-300">AWS Amplify, Lambda, S3, DynamoDB, Docker, GitHub Actions</div>
-        <div className="text-purple-400 mt-2">Data:</div>
-        <div className="text-gray-300">PostgreSQL, MongoDB, Redis, Firebase</div>
-        <div className="text-purple-400 mt-2">Quality:</div>
-        <div className="text-gray-300">Jest, React Testing Library, JUnit, WCAG 508</div>
-      </>
-    ),
-  },
-  {
-    cmd: 'experience --recent',
-    output: (
-      <>
-        <div className="text-[#55f89f] font-bold">CuraJOY — Full Stack Developer</div>
-        <div className="text-gray-300">
-          React and Node on AWS Amplify; throughput ↑ 35 percent for 3000 plus users; CI/CD and accessibility wins
-        </div>
-        <br />
-        <div className="text-[#55f89f] font-bold">Accenture — Software Dev Intern</div>
-        <div className="text-gray-300">
-          Java microservices and SQL; monitoring automation; logging pipelines; uptime ↑ 20 percent
-        </div>
-      </>
-    ),
-  },
-  {
-    cmd: 'education --show',
-    output: (
-      <>
-        <div className="text-[#55f89f] font-bold">Stevens Institute of Technology</div>
-        <div className="text-gray-300">MS Computer Science — GPA 3.7 • May 2025</div>
-        <div className="text-gray-400">
-          DSA, Web Programming, Software Requirements, DBMS, Machine Learning
-        </div>
-      </>
-    ),
-  },
-  {
-    cmd: 'projects --list',
-    output: (
-      <>
-        <div className="text-blue-400">vision --open</div>
-        <div className="text-blue-400">cachebench --open</div>
-        <div className="text-blue-400">shortsy --open</div>
-        <div className="text-gray-400 mt-1">Tip: type a project command above to see details</div>
-      </>
-    ),
-  },
-  {
-    cmd: 'vision --open',
-    output: (
-      <>
-        <div className="text-[#55f89f] font-bold">VisionSense — Facial Recognition App</div>
-        <div className="text-gray-300">
-          Real time detection at 90 percent accuracy; 500 plus MAU; 99 percent uptime on Vercel; tests at 95 percent
-        </div>
-        <div className="text-gray-400">React, Node, Redux, Bootstrap, REST APIs, Vercel</div>
-        <a className="text-blue-400 underline" href="#" target="_blank" rel="noreferrer">Live</a>
-        <span className="text-gray-500">  •  </span>
-        <a className="text-blue-400 underline" href="#" target="_blank" rel="noreferrer">Repo</a>
-      </>
-    ),
-  },
-  {
-    cmd: 'cachebench --open',
-    output: (
-      <>
-        <div className="text-[#55f89f] font-bold">CacheBench — Cache Policy Simulator</div>
-        <div className="text-gray-300">
-          Visualizes LRU and friends; reporting accuracy 98 percent; analysis time ↓ 60 percent; serverless warmups
-        </div>
-        <div className="text-gray-400">Next.js, TypeScript, Recharts, Vercel, Serverless APIs</div>
-        <a className="text-blue-400 underline" href="#" target="_blank" rel="noreferrer">Live</a>
-        <span className="text-gray-500">  •  </span>
-        <a className="text-blue-400 underline" href="#" target="_blank" rel="noreferrer">Repo</a>
-      </>
-    ),
-  },
-  {
-    cmd: 'shortsy --open',
-    output: (
-      <>
-        <div className="text-[#55f89f] font-bold">Shortsy — URL Shortener</div>
-        <div className="text-gray-300">
-          QR codes and custom slugs; 48ms p95 redirects; 99.9 percent uptime; support requests ↓ 70 percent
-        </div>
-        <div className="text-gray-400">TypeScript, Node, Redis, Docker, CI/CD</div>
-        <a className="text-blue-400 underline" href="#" target="_blank" rel="noreferrer">Live</a>
-        <span className="text-gray-500">  •  </span>
-        <a className="text-blue-400 underline" href="#" target="_blank" rel="noreferrer">Repo</a>
-      </>
-    ),
-  },
-  {
-    cmd: 'quote --random',
-    output: (
-      <>
-        <span className="text-blue-400 font-bold">
-          The best optimization is the one users never notice.
-        </span>
-        <br />
-        <span className="text-gray-300">— probably Sumedh, after coffee</span>
-      </>
-    ),
-  },
-  {
-    cmd: 'sweet --status',
-    output: (
-      <>
-        <span className="text-yellow-400">🍫 Sweet tooth engaged</span>
-        <br />
-        <span className="text-gray-300">Monitoring sugar like I monitor server logs</span>
-      </>
-    ),
-  },
-  {
-    cmd: 'dog --summon',
-    output: (
-      <>
-        <pre className="text-yellow-400">{`
+  // 5-letter tech words (tweak as you like)
+  const DEV_WORDS = [
+    'react',
+    'hooks',
+    'redux',
+    'array',
+    'types',
+    'nodej',
+    'cache',
+    'model',
+    'cloud',
+    'tests',
+    'state',
+    'queue',
+    'infra',
+    'merge',
+    'query',
+  ]
+  const startDevdle = () => {
+    const secret = DEV_WORDS[Math.floor(Math.random() * DEV_WORDS.length)]
+    setGameSecret(secret)
+    setGameAttempts([])
+    setGameActive(true)
+  }
+
+  const endDevdle = () => {
+    setGameActive(false)
+    setGameSecret('')
+    setGameAttempts([])
+  }
+
+  const scoreGuess = (guess: string, secret: string) => {
+    // Return array of emoji markers per char
+    const res: string[] = Array(5).fill('⬛')
+    const secretArr = secret.split('')
+    const used = Array(5).fill(false)
+
+    // First pass: correct position
+    for (let i = 0; i < 5; i++) {
+      if (guess[i] === secret[i]) {
+        res[i] = '🟩'
+        used[i] = true
+      }
+    }
+
+    // Second pass: present elsewhere
+    for (let i = 0; i < 5; i++) {
+      if (res[i] === '🟩') continue
+      const idx = secretArr.findIndex((c, j) => c === guess[i] && !used[j])
+      if (idx !== -1) {
+        res[i] = '🟨'
+        used[idx] = true
+      }
+    }
+
+    return res.join('')
+  }
+
+  const commands: CommandData[] = [
+    {
+      cmd: 'whoami --info',
+      output: (
+        <>
+          <span className="text-[#55f89f] font-bold">
+            Sumedh Jitendra Badnore
+          </span>
+          <br />
+          <span className="text-gray-300">
+            Full Stack Developer | React • TypeScript • AWS • Microservices •
+            SQL/NoSQL
+          </span>
+          <br />
+          <span className="text-gray-400">
+            New York, USA — Open to relocation
+          </span>
+        </>
+      ),
+    },
+    {
+      cmd: 'contact --all',
+      output: (
+        <>
+          <div className="text-blue-400">sumedhbadnore2801@gmail.com</div>
+          <div className="text-gray-300">
+            LinkedIn: linkedin.com/in/sumedhbadnore
+          </div>
+          <div className="text-gray-300">GitHub: github.com/sumedhbadnore</div>
+          <div className="text-gray-300">Portfolio: sumedh.dev</div>
+        </>
+      ),
+    },
+    {
+      cmd: 'availability --status',
+      output: (
+        <>
+          <span className="text-green-400 font-bold">
+            Actively seeking full-time SWE roles
+          </span>
+          <br />
+          <span className="text-gray-300">
+            Hybrid NYC or Remote US preferred
+          </span>
+        </>
+      ),
+    },
+    {
+      cmd: 'metrics --highlights',
+      output: (
+        <>
+          <div className="text-gray-300">
+            Latency ↓ 30 percent • Uptime ↑ 25 percent • Deploy failures ↓ 40
+            percent
+          </div>
+          <div className="text-gray-300">
+            User adoption ↑ 35 percent • 3,000 plus MAU supported
+          </div>
+        </>
+      ),
+    },
+    {
+      cmd: 'stack --top',
+      output: (
+        <>
+          <div className="text-purple-400">Frontend:</div>
+          <div className="text-gray-300">
+            React, Next.js, TypeScript, Redux, MUI, Bootstrap
+          </div>
+          <div className="text-purple-400 mt-2">Backend:</div>
+          <div className="text-gray-300">
+            Node.js, Express, Java, Python, REST APIs
+          </div>
+          <div className="text-purple-400 mt-2">Cloud & DevOps:</div>
+          <div className="text-gray-300">
+            AWS Amplify, Lambda, S3, DynamoDB, Docker, GitHub Actions
+          </div>
+          <div className="text-purple-400 mt-2">Data:</div>
+          <div className="text-gray-300">
+            PostgreSQL, MongoDB, Redis, Firebase
+          </div>
+          <div className="text-purple-400 mt-2">Quality:</div>
+          <div className="text-gray-300">
+            Jest, React Testing Library, JUnit, WCAG 508
+          </div>
+        </>
+      ),
+    },
+    {
+      cmd: 'experience --recent',
+      output: (
+        <>
+          <div className="text-[#55f89f] font-bold">
+            CuraJOY — Full Stack Developer
+          </div>
+          <div className="text-gray-300">
+            React and Node on AWS Amplify; throughput ↑ 35 percent for 3000 plus
+            users; CI/CD and accessibility wins
+          </div>
+          <br />
+          <div className="text-[#55f89f] font-bold">
+            Accenture — Software Dev Intern
+          </div>
+          <div className="text-gray-300">
+            Java microservices and SQL; monitoring automation; logging
+            pipelines; uptime ↑ 20 percent
+          </div>
+        </>
+      ),
+    },
+    {
+      cmd: 'education --show',
+      output: (
+        <>
+          <div className="text-[#55f89f] font-bold">
+            Stevens Institute of Technology
+          </div>
+          <div className="text-gray-300">
+            MS Computer Science — GPA 3.7 • May 2025
+          </div>
+          <div className="text-gray-400">
+            DSA, Web Programming, Software Requirements, DBMS, Machine Learning
+          </div>
+        </>
+      ),
+    },
+    {
+      cmd: 'projects --list',
+      output: (
+        <>
+          <div className="text-blue-400">vision --open</div>
+          <div className="text-blue-400">cachebench --open</div>
+          <div className="text-blue-400">shortsy --open</div>
+          <div className="text-gray-400 mt-1">
+            Tip: type a project command above to see details
+          </div>
+        </>
+      ),
+    },
+    {
+      cmd: 'vision --open',
+      output: (
+        <>
+          <div className="text-[#55f89f] font-bold">
+            VisionSense — Facial Recognition App
+          </div>
+          <div className="text-gray-300">
+            Real time detection at 90 percent accuracy; 500 plus MAU; 99 percent
+            uptime on Vercel; tests at 95 percent
+          </div>
+          <div className="text-gray-400">
+            React, Node, Redux, Bootstrap, REST APIs, Vercel
+          </div>
+          <a
+            className="text-blue-400 underline"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Live
+          </a>
+          <span className="text-gray-500"> • </span>
+          <a
+            className="text-blue-400 underline"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Repo
+          </a>
+        </>
+      ),
+    },
+    {
+      cmd: 'cachebench --open',
+      output: (
+        <>
+          <div className="text-[#55f89f] font-bold">
+            CacheBench — Cache Policy Simulator
+          </div>
+          <div className="text-gray-300">
+            Visualizes LRU and friends; reporting accuracy 98 percent; analysis
+            time ↓ 60 percent; serverless warmups
+          </div>
+          <div className="text-gray-400">
+            Next.js, TypeScript, Recharts, Vercel, Serverless APIs
+          </div>
+          <a
+            className="text-blue-400 underline"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Live
+          </a>
+          <span className="text-gray-500"> • </span>
+          <a
+            className="text-blue-400 underline"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Repo
+          </a>
+        </>
+      ),
+    },
+    {
+      cmd: 'shortsy --open',
+      output: (
+        <>
+          <div className="text-[#55f89f] font-bold">
+            Shortsy — URL Shortener
+          </div>
+          <div className="text-gray-300">
+            QR codes and custom slugs; 48ms p95 redirects; 99.9 percent uptime;
+            support requests ↓ 70 percent
+          </div>
+          <div className="text-gray-400">
+            TypeScript, Node, Redis, Docker, CI/CD
+          </div>
+          <a
+            className="text-blue-400 underline"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Live
+          </a>
+          <span className="text-gray-500"> • </span>
+          <a
+            className="text-blue-400 underline"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Repo
+          </a>
+        </>
+      ),
+    },
+    {
+      cmd: 'quote --random',
+      output: (
+        <>
+          <span className="text-blue-400 font-bold">
+            The best optimization is the one users never notice.
+          </span>
+          <br />
+          <span className="text-gray-300">— probably Sumedh, after coffee</span>
+        </>
+      ),
+    },
+    {
+      cmd: 'sweet --status',
+      output: (
+        <>
+          <span className="text-yellow-400">🍫 Sweet tooth engaged</span>
+          <br />
+          <span className="text-gray-300">
+            Monitoring sugar like I monitor server logs
+          </span>
+        </>
+      ),
+    },
+    {
+      cmd: 'dog --summon',
+      output: (
+        <>
+          <pre className="text-yellow-400">{`
  ⢠⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⢶⡆⠀⠀⠀⠀
 ⠀⠸⡇⠀⠈⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⡜⠁⠀⠸⡄⠀⠀⠀⠀
 ⠀⢸⡇⠀⠀⠀⠘⣦⠀⠀⢀⣀⣀⡀⠀⣾⠀⢀⣀⠀⠹⡀⠀⠀⠀
@@ -214,53 +374,99 @@ const commands: CommandData[] = [
 ⠀⠀⠀⠀⠀⠀⠀⠀⠑⠦⡙⠷⠉⢐⡠⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         `}</pre>
-        <span className="text-gray-300">Muffy - "woof....woof...."</span>
-      </>
-    ),
-  },
-  {
-    cmd: 'resume --download',
-    output: (
-      <>
-        <span className="text-[#55f89f]">Download resume:</span>{' '}
-        <a className="text-blue-400 underline" href="/Sumedh_Badnore_Resume.pdf" target="_blank" rel="noreferrer">
-          Sumedh_Badnore_Resume.pdf
-        </a>
-      </>
-    ),
-  },
-  {
-    cmd: 'help',
-    output: (
-      <div className="text-gray-300">
-        <p className="text-[#55f89f] mb-2">Available commands:</p>
-        {[
-          'whoami --info',
-          'contact --all',
-          'availability --status',
-          'metrics --highlights',
-          'stack --top',
-          'experience --recent',
-          'education --show',
-          'projects --list',
-          'vision --open',
-          'cachebench --open',
-          'shortsy --open',
-          'quote --random',
-          'sweet --status',
-          'dog --summon',
-          'resume --download',
-          'clear',
-        ].map((c, i) => (
-          <div key={i} className="mb-1">
-            <span className="text-yellow-400">{c}</span>
+          <span className="text-gray-300">Muffy - "woof....woof...."</span>
+        </>
+      ),
+    },
+    {
+      cmd: 'resume --download',
+      output: (
+        <>
+          <span className="text-[#55f89f]">Download resume:</span>{' '}
+          <a
+            className="text-blue-400 underline"
+            href="/Sumedh_Badnore_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Sumedh_Badnore_Resume.pdf
+          </a>
+        </>
+      ),
+    },
+    {
+      cmd: 'game --help',
+      output: (
+        <div className="text-gray-300">
+          <div className="text-[#55f89f] font-bold mb-1">
+            Devdle — 5-letter dev word
           </div>
-        ))}
-      </div>
-    ),
-  },
-]
-
+          <div>
+            Start: <span className="text-yellow-400">game --play</span>
+          </div>
+          <div>
+            Quit: <span className="text-yellow-400">game --quit</span>
+          </div>
+          <div className="mt-1 text-gray-400">
+            While active, just type guesses (5 letters).
+          </div>
+          <div>🟩 correct • 🟨 present • ⬛ absent</div>
+        </div>
+      ),
+    },
+    {
+      cmd: 'game --play',
+      output: (
+        <div className="text-gray-300">
+          <div className="text-[#55f89f] font-bold">Devdle started!</div>
+          <div>Guess the 5-letter dev word in 6 tries.</div>
+          <div className="text-gray-400">
+            Type a guess like <span className="text-yellow-400">react</span> and
+            hit Enter.
+          </div>
+          <div className="text-gray-500 mt-1">
+            Need help? <span className="text-yellow-400">game --help</span> | <span className="text-yellow-400">game --quit</span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      cmd: 'game --quit',
+      output: (
+        <div className="text-gray-300">
+          <div className="text-[#55f89f] font-bold">Devdle ended.</div>
+          <div className="text-gray-400">
+            Come back with <span className="text-yellow-400">game --play</span>.
+          </div>
+        </div>
+      ),
+    },
+    {
+      cmd: 'help',
+      output: (
+        <div className="text-gray-300">
+          <p className="text-[#55f89f] mb-2">Available commands:</p>
+          {[
+            'whoami --info',
+            'contact --all',
+            'metrics --highlights',
+            'stack --top',
+            'experience --recent',
+            'projects --list',
+            'quote --random',
+            'dog --summon',
+            'game --play',
+            'resume --download',
+            'clear',
+          ].map((c, i) => (
+            <div key={i} className="mb-1">
+              <span className="text-yellow-400">{c}</span>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+  ]
 
   const scrollToBottom = () => {
     if (terminalBodyRef.current) {
@@ -268,38 +474,141 @@ const commands: CommandData[] = [
     }
   }
 
-  const processCommand = (cmd: string) => {
+  const processCommand = (raw: string) => {
     let output: CommandOutput
+    const cmd = raw.trim().toLowerCase()
 
+    // If game active, treat input as a guess unless user types game control
+    if (gameActive && !cmd.startsWith('game --')) {
+      // Validate guess
+      if (cmd.length !== 5 || /[^a-z]/.test(cmd)) {
+        output = (
+          <span className="text-red-400">
+            Enter a 5-letter word. Example: react
+          </span>
+        )
+      } else {
+        const score = scoreGuess(cmd, gameSecret)
+        const attemptLine = (
+          <div className="text-gray-300">
+            <span className="text-yellow-400 mr-2">{cmd}</span>
+            <span className="font-bold">{score}</span>
+          </div>
+        )
+
+        const newAttempts = [...gameAttempts, cmd]
+        setGameAttempts(newAttempts)
+
+        if (cmd === gameSecret) {
+          output = (
+            <div className="text-[#55f89f]">
+              {attemptLine}
+              <div className="mt-1 font-bold">
+                🎉 Correct! The word was{' '}
+                <span className="text-yellow-400">{gameSecret}</span>.
+              </div>
+              <div className="text-gray-400">
+                Play again with{' '}
+                <span className="text-yellow-400">game --play</span>
+              </div>
+            </div>
+          )
+          endDevdle()
+        } else if (newAttempts.length >= maxAttempts) {
+          output = (
+            <div className="text-red-400">
+              {attemptLine}
+              <div className="mt-1 font-bold">
+                Out of tries. The word was{' '}
+                <span className="text-yellow-400">{gameSecret}</span>.
+              </div>
+              <div className="text-gray-400">
+                Try again with{' '}
+                <span className="text-yellow-400">game --play</span>
+              </div>
+            </div>
+          )
+          endDevdle()
+        } else {
+          output = attemptLine
+        }
+      }
+
+      setTerminalHistory((prev: HistoryEntry[]) => [
+        ...prev,
+        { command: raw, output },
+      ])
+      setTimeout(scrollToBottom, 0)
+      return
+    }
+
+    // Normal command handling
     if (cmd === 'help') {
       output = (
+        // <div className="text-gray-300">
+        //   <p className="text-[#55f89f] mb-2">Available commands:</p>
+        //   {commands.map((command, index) => (
+        //     <div key={index} className="mb-1">
+        //       <span className="text-yellow-400">{command.cmd}</span>
+        //     </div>
+        //   ))}
+        //   <div className="mb-1">
+        //     <span className="text-yellow-400">help</span> - Display this help
+        //     message
+        //   </div>
+        //   <div className="mb-1">
+        //     <span className="text-yellow-400">clear</span> - Clear the terminal
+        //   </div>
+        // </div>
         <div className="text-gray-300">
           <p className="text-[#55f89f] mb-2">Available commands:</p>
-          {commands.map((command, index) => (
-            <div key={index} className="mb-1">
-              <span className="text-yellow-400">{command.cmd}</span>
+          {[
+            'whoami --info',
+            'contact --all',
+            'metrics --highlights',
+            'stack --top',
+            'experience --recent',
+            'projects --list',
+            'quote --random',
+            'dog --summon',
+            'game --play',
+            'resume --download',
+            'clear',
+          ].map((c, i) => (
+            <div key={i} className="mb-1">
+              <span className="text-yellow-400">{c}</span>
             </div>
           ))}
-          <div className="mb-1">
-            <span className="text-yellow-400">help</span> - Display this help
-            message
-          </div>
-          <div className="mb-1">
-            <span className="text-yellow-400">clear</span> - Clear the terminal
-          </div>
         </div>
-      )
-    } else if (cmd === 'clear') {
+      )}
+       else if (cmd === 'clear') {
       setTerminalHistory([])
       return
+    } else if (cmd === 'game --play') {
+      startDevdle()
+      // Also show the "started" message styled same as commands entry
+      const found = commands.find((c) => c.cmd === 'game --play')
+      output = found ? (
+        found.output
+      ) : (
+        <span className="text-[#55f89f]">Devdle started.</span>
+      )
+    } else if (cmd === 'game --quit') {
+      endDevdle()
+      const found = commands.find((c) => c.cmd === 'game --quit')
+      output = found ? (
+        found.output
+      ) : (
+        <span className="text-gray-300">Devdle ended.</span>
+      )
     } else {
-      const foundCommand = commands.find((command) => command.cmd === cmd)
+      const foundCommand = commands.find((command) => command.cmd === raw)
       if (foundCommand) {
         output = foundCommand.output
       } else {
         output = (
           <span className="text-red-400">
-            Command not found: {cmd}. Type 'help' for available commands.
+            Command not found: {raw}. Type 'help' for available commands.
           </span>
         )
       }
@@ -307,9 +616,8 @@ const commands: CommandData[] = [
 
     setTerminalHistory((prev: HistoryEntry[]) => [
       ...prev,
-      { command: cmd, output: output },
+      { command: raw, output },
     ])
-
     setTimeout(scrollToBottom, 0)
   }
 

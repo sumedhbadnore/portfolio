@@ -3,8 +3,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Not Found | Andre Chandra Putra',
-  description: "Andre Chandra Putra's personal website",
+  title: 'Not Found | Sumedh Badnore',
+  description: "Sumedh Badnore's personal website",
 }
 
 export default function ErrorPage() {

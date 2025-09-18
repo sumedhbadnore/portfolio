@@ -385,7 +385,7 @@ export default function TerminalSection() {
           <span className="text-[#55f89f]">Download resume:</span>{' '}
           <a
             className="text-blue-400 underline"
-            href="/Sumedh_Badnore_Resume.pdf"
+            href="https://drive.google.com/file/d/1w7-32Z2xFty9WE1XSBYrb0yNDN5aB95W/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
           >
@@ -571,8 +571,8 @@ export default function TerminalSection() {
             'projects --list',
             'quote --random',
             'dog --summon',
-            'game --play',
             'resume --download',
+            'game --play',
             'clear',
           ].map((c, i) => (
             <div key={i} className="mb-1">

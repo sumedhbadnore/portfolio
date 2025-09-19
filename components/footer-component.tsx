@@ -35,7 +35,7 @@ export const Footer = () => {
               Sumedh Badnore
             </Link>
           </LinkButton>
-          . All rights reserved. <br />
+          . Made with ☕ caffeine and curiosity by Sumedh. <br />
         </b>
       </div>
     </footer>

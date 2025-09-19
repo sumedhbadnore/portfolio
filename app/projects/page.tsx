@@ -5,7 +5,7 @@ import ProjectCard from '@/components/project-card'
 export const metadata: Metadata = {
   title: 'Projects',
   description:
-    "Explore Andre Chandra Putra's portfolio of software engineering projects, featuring web applications, technical solutions, and innovative developments.",
+    "Explore Sumedh Jitendra Badnore's portfolio of software engineering projects, featuring web applications, technical solutions, and innovative developments.",
   openGraph: {
     title: 'Projects Portfolio',
     description:
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
         url: '/open-graph/project-og.png',
         width: 1200,
         height: 630,
-        alt: 'Andre Chandra Putra - Projects Portfolio',
+        alt: 'Sumedh Jitendra Badnore - Projects Portfolio',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Projects Portfolio | Andre Chandra Putra',
+    title: 'Projects Portfolio | Sumedh Jitendra Badnore',
     description:
       'Discover my collection of software engineering projects and technical solutions',
     images: ['/open-graph/project-og.png'],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     'web development',
     'portfolio',
     'technical projects',
-    'Andre Chandra Putra',
+    'Sumedh Jitendra Badnore',
     'software engineer portfolio',
   ],
   alternates: {

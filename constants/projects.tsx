@@ -16,6 +16,12 @@ import shortsyThumbnail from '@/public/projects/shortsy/shortsy-thumbnail.png'
 import shortsy1 from '@/public/projects/shortsy/shortsy1.png'
 import shortsy2 from '@/public/projects/shortsy/shortsy2.png'
 
+// BallonTracks
+import balloontracksThumbnail from '@/public/projects/balloontracks/balloontracks-thumbnail.png'
+import bt1 from '@/public/projects/balloontracks/bt-1.png'
+import bt2 from '@/public/projects/balloontracks/bt-2.png'
+import bt3 from '@/public/projects/balloontracks/bt-3.png'
+
 import { Project } from '@/types/project'
 import { motion } from 'framer-motion'
 
@@ -124,59 +130,43 @@ export const projects: Project[] = [
       </motion.div>
     ),
   },
-  // {
-  //   href: '',
-  //   repo: 'https://github.com/AndreChops/MathFantasy',
-  //   title: 'Math Fantasy',
-  //   category: 'university',
-  //   description:
-  //     'Math Fantasy, is a statistics mathematic learning game with a 2D Top Down Syle, designed to help students learn through playing a game.',
-  //   thumbnail: mathFantasyThumbnail,
-  //   images: [
-  //     mathFantasyMainMenu,
-  //     mathFantasyHowtoPlay,
-  //     mathFantasyLevelSelect,
-  //     mathFantasyTaigaLevel,
-  //     mathFantasySwampLevel,
-  //     mathFantasyCaveLevel,
-  //     mathFantasyQuestion,
-  //     mathFantasyQuestion2,
-  //     mathFantasyQuestion3,
-  //     mathFantasyGameOver,
-  //   ],
-  //   stack: ['Unity'],
-  //   slug: 'mathfantasy',
-  //   content: (
-  //     <motion.div
-  //       initial={{ opacity: 0, y: 40 }}
-  //       animate={{ opacity: 1, y: 0 }}
-  //       transition={{ duration: 0.3 }}
-  //     >
-  //       <p className="font-geist_mono tracking-tighter text-gray-400">
-  //         Math Fantasy is my final project at Universitas Multimedia Nusantara,
-  //         where I developed a top-down 2D RPG-style game designed to make
-  //         learning statistics more engaging. The game utilizes the Fisher-Yates
-  //         algorithm to randomly shuffle questions, ensuring that players cannot
-  //         memorize answers and are challenged with new question sets each time
-  //         they play. In the game, players must defeat enemies before reaching a
-  //         sign that contains a series of questions related to statistics. The
-  //         core aim of the game is to enhance learning motivation by
-  //         incorporating educational elements into an interactive, fun gameplay
-  //         experience.
-  //       </p>
-  //       <p className="font-geist_mono tracking-tighter text-gray-400">
-  //         The game was created using Unity Engine version 2021.3.16f1, and I
-  //         used 2D assets obtained from itch.io to bring the game to life. The
-  //         game&apos;s mechanics are focused on rewarding problem-solving and
-  //         learning, offering a dynamic experience where players actively
-  //         participate in their education while also enjoying an adventure. By
-  //         blending education with gaming, Math Fantasy seeks to encourage
-  //         students to stay motivated and improve their knowledge in a fun and
-  //         immersive way.
-  //       </p>
-  //     </motion.div>
-  //   ),
-  // },
+  {
+    href: 'https://windborne-tracks-teal.vercel.app/',
+    repo: 'https://github.com/sumedhbadnore/windborne-tracks',
+    title: 'BalloonTracks',
+    category: 'freelance',
+    description:
+      'Live 24 hour WindBorne telemetry stitched into speed-colored tracks on Leaflet with optional Open-Meteo ERA5 wind overlay, auto-refreshing and operator-friendly.',
+    thumbnail: balloontracksThumbnail,
+    images: [bt1, bt2, bt3],
+    stack: ['Nextjs', 'Tailwindcss', 'Vercel', 'Serverless APIs'],
+    slug: 'balloontracks',
+    content: (
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <p className="font-geist_mono tracking-tighter text-gray-400">
+          BalloonTracks began as an operator first view to turn 24 hour
+          WindBorne telemetry into clear, live tracks. I built a tolerant parser
+          for inconsistent hour files, framed positions by hour, then stitched
+          points into per balloon paths using nearest neighbor with speed and
+          jump caps. The goal was simple and mission driven show where balloons
+          were and how they moved without forcing operators to wrangle raw data.
+        </p>
+        <p className="font-geist_mono tracking-tighter text-gray-400">
+          The app renders speed colored polylines on a Leaflet map with tooltips
+          for time, speed, and altitude, and refreshes on a five minute cadence.
+          I added an Open Meteo ERA5 wind overlay at selectable pressure levels
+          to explain drift and speed spikes, plus controls for track count,
+          thinning distance, min segments, and max speed. Server routes in
+          Next.js fetch and normalize the data, keeping the client lightweight
+          and reliable for real time use.
+        </p>
+      </motion.div>
+    ),
+  },
   // {
   //   href: 'https://sei-you.vercel.app/',
   //   repo: 'https://github.com/IArnFredo/WeHearYouAll-SeiYou',

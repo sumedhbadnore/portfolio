@@ -72,7 +72,7 @@ export default function ProjectCard({
               className=" hidden lg:block w-full font-geist_mono tracking-tighter"
               onValueChange={setActiveCategory}
             >
-              <TabsList className="grid w-full grid-cols-4">
+              {/* <TabsList className="grid w-full grid-cols-4">
                 {categories.map((category) => (
                   <TabsTrigger
                     key={category}
@@ -85,7 +85,7 @@ export default function ProjectCard({
                     {category.replace('-', ' ')}
                   </TabsTrigger>
                 ))}
-              </TabsList>
+              </TabsList> */}
             </Tabs>
           )}
         </motion.div>

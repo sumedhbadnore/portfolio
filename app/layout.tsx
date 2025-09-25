@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Footer } from '@/components/footer-component'
 import Navbar from '@/components/nav-bar'
+import FloatingChat from "@/components/floating-chat"
 import { fonts } from '@/lib/fonts'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/next'
@@ -92,6 +93,7 @@ export default function RootLayout({
             </main>
             <Footer />
           </div>
+          <FloatingChat/>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

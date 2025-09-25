@@ -22,6 +22,12 @@ import bt1 from '@/public/projects/balloontracks/bt-1.png'
 import bt2 from '@/public/projects/balloontracks/bt-2.png'
 import bt3 from '@/public/projects/balloontracks/bt-3.png'
 
+// ChatBot
+import chatbotThumbnail from '@/public/projects/chatbot/chatbot-thumbnail.png'
+import chatbot1 from '@/public/projects/chatbot/cb-1.png'
+import chatbot2 from '@/public/projects/chatbot/cb-2.png'
+import chatbot3 from '@/public/projects/chatbot/cb-3.png'
+
 import { Project } from '@/types/project'
 import { motion } from 'framer-motion'
 
@@ -131,6 +137,50 @@ export const projects: Project[] = [
     ),
   },
   {
+    href: 'https://ai-chatbot-gamma-cyan.vercel.app/',
+    repo: 'https://github.com/sumedhbadnore/ai-chatbot',
+    title: 'AI Chat Bot',
+    category: 'all',
+    description:
+      'An interactive AI assistant that lets visitors chat with my portfolio, delivering fast, accurate answers about my skills and projects.',
+    thumbnail: chatbotThumbnail,
+    images: [chatbot1, chatbot2, chatbot3],
+    stack: ['Nextjs', 'Openai', 'React'],
+    slug: 'chatbot',
+    content: (
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <p className="font-geist_mono tracking-tighter text-gray-400">
+          The Portfolio AI Chatbot is an interactive assistant I built to give
+          visitors a richer, more conversational way to explore my background.
+          Instead of just reading static pages, users can ask about my skills,
+          projects, and career experience and get instant, context-aware
+          answers.
+        </p>
+        <p className="font-geist_mono tracking-tighter text-gray-400">
+          The bot is powered by Next.js and OpenAI’s GPT-4-mini model, wrapped
+          in a custom retrieval-augmented generation (RAG) layer. I preprocess
+          and chunk my résumé data, then rank the most relevant snippets with a
+          lightweight similarity search so the model always answers with
+          accurate details. A streaming API and edge-runtime functions keep
+          responses snappy, with median round-trip times under 200 ms.
+        </p>
+        <p className="font-geist_mono tracking-tighter text-gray-400">
+          For deployment I built a fully self-contained widget that can be
+          embedded via iframe on any site—my own portfolio or elsewhere—without
+          style collisions. Strong Content-Security-Policy headers and carefully
+          scoped sandbox permissions keep the integration secure while still
+          allowing real-time interaction. The result is a smooth, low-latency
+          chat experience that turns a static portfolio into a dynamic,
+          always-on conversation.
+        </p>
+      </motion.div>
+    ),
+  },
+  {
     href: 'https://windborne-tracks-teal.vercel.app/',
     repo: 'https://github.com/sumedhbadnore/windborne-tracks',
     title: 'BalloonTracks',
@@ -167,45 +217,7 @@ export const projects: Project[] = [
       </motion.div>
     ),
   },
-  // {
-  //   href: 'https://sei-you.vercel.app/',
-  //   repo: 'https://github.com/IArnFredo/WeHearYouAll-SeiYou',
-  //   title: 'Sei-You',
-  //   category: 'university',
-  //   description:
-  //     'SeiYou is a voice-over application and it is hoped that everyone will get passion and work from this application for those who need it.',
-  //   thumbnail: seiYouThumbnail,
-  //   images: [sei1, sei2, sei3],
-  //   stack: ['Ionic', 'Capacitor', 'React'],
-  //   slug: 'sei-you',
-  //   content: (
-  //     <motion.div
-  //       initial={{ opacity: 0, y: 40 }}
-  //       animate={{ opacity: 1, y: 0 }}
-  //       transition={{ duration: 0.3 }}
-  //     >
-  //       <p className="font-geist_mono tracking-tighter text-gray-400">
-  //         SeiYou is a voice-over application designed to enable users to express
-  //         themselves through voice recordings. Users can easily record their
-  //         voices and share them with the community, allowing others to discover
-  //         and listen to unique voice content.
-  //       </p>
-  //       <p className="font-geist_mono tracking-tighter text-gray-400">
-  //         This project was developed using Ionic and Capacitor for
-  //         cross-platform compatibility, combined with React and TypeScript for a
-  //         robust and scalable architecture. The goal was to create a seamless
-  //         user experience with intuitive navigation and smooth audio playback
-  //         functionality.
-  //       </p>
-  //       <p className="font-geist_mono tracking-tighter text-gray-400">
-  //         Through this project, I gained valuable experience in mobile app
-  //         development, integrating audio recording features, and managing
-  //         user-generated content. SeiYou represents my ability to build engaging
-  //         applications that encourage creativity and interaction among users.
-  //       </p>
-  //     </motion.div>
-  //   ),
-  // },
+  
   // {
   //   href: '',
   //   repo: 'https://github.com/AndreChops/OrangeBurger',

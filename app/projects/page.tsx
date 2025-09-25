@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     'software engineer portfolio',
   ],
   alternates: {
-    canonical: 'https://andrechandra.vercel.app/projects',
+    canonical: 'https://sumedhbadnore.vercel.app/projects',
   },
   robots: {
     index: true,

@@ -385,7 +385,7 @@ export default function TerminalSection() {
           <span className="text-[#55f89f]">Download resume:</span>{' '}
           <a
             className="text-blue-400 underline"
-            href="https://drive.google.com/file/d/1w7-32Z2xFty9WE1XSBYrb0yNDN5aB95W/view?usp=sharing"
+            href="https://drive.google.com/file/d/1cx40q4D6IuuIH3FtJtQT_utVIRDtySyj/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
           >

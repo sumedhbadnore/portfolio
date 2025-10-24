@@ -1,93 +1,92 @@
-# Andre Chandra Putra - Portfolio Blog
+# 🌐 Personal Portfolio – Sumedh Jitendra Badnore
 
-Welcome to my personal portfolio blog! This site serves as a central hub to showcase my journey as a developer, share insightful tutorials, and highlight my projects.
+Welcome to my personal portfolio website!  
+This project showcases my work as a **Full Stack Developer** — featuring my projects, experience, and technical insights on modern web development.
 
-## 🌐 Live Site
+Deployed live at 👉 [**portfolio-psi-bay-64.vercel.app**](https://portfolio-psi-bay-64.vercel.app/)
 
-Check out my portfolio blog at: [andrechandra.vercel.app](https://andrechandra.vercel.app)
 
 ## 🚀 Technologies Used
 
-- **Next.js**: Modern React framework for fast and SEO-friendly web applications.
-- **Tailwind CSS**: Utility-first CSS framework for rapid styling.
-- **TypeScript**: Enhancing code quality and maintainability.
-- **MDX**: Writing blog posts with Markdown and JSX for dynamic content.
-- **Vercel**: Hosting platform for smooth deployment and scalability.
+- **Next.js** – Modern React framework for fast and SEO-friendly web applications  
+- **Tailwind CSS** – Utility-first CSS framework for rapid, responsive UI design  
+- **TypeScript** – Strongly typed JavaScript for enhanced code quality and maintainability  
+- **MDX** – Write blog posts using Markdown + JSX for dynamic and interactive content  
+- **Vercel** – Lightning-fast hosting and CI/CD deployment platform
+
 
 ## ✨ Features
+- 🤖 **Assistant Chat Bot** - Personal assistant bot to answer profile related questions.
+- 💼 **Portfolio Showcase** – Highlighting key projects, experience, and achievements  
+- 📱 **Responsive Design** – Optimized across desktop, tablet, and mobile  
+- 🌙 **Dark Mode Support** – Seamless toggle for light and dark themes  
+- 🔍 **SEO Optimized** – Enhanced discoverability with meta tags and Open Graph support
 
-- **Developer Blog**: Tutorials, tips, and insights on React, Next.js, and other web development topics.
-- **Portfolio Showcase**: A dedicated section highlighting my projects, experiences, and achievements.
-- **Responsive Design**: Optimized for all devices, from desktops to smartphones.
-- **Dark Mode Support**: A user-friendly light and dark mode toggle.
-- **SEO Optimized**: Configured with meta tags and Open Graph for better discoverability.
 
-## 🛠 Development
+## 🛠️ Getting Started
 
-### Prerequisites
-
-- Node.js 18+
-- npm, yarn, or pnpm
-
-<!-- ### Getting Started
-
-1. Clone the repository:
-
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/andrechandra/portfolio-blog.git
-cd portfolio-blog
+git clone https://github.com/sumedhbadnore/portfolio.git
+cd portfolio
 ```
 
-2. Install dependencies:
-
+### 2. Install Dependencies
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
-3. Run the development server:
-
+### 3. Run Development Server
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+Your app will be live at http://localhost:3000
+
+## Project Structure
+```
+portfolio/
+├── app/                 # Next.js app directory (routes, pages, layout)
+├── components/          # Reusable UI and section components
+│   ├── motions/         # Framer Motion wrappers
+│   ├── sections/        # About, Projects, Resume sections
+│   └── ui/              # UI primitives (buttons, cards, modals, etc.)
+├── constants/           # Static data for projects, socials, and links
+├── contents/            # Blog posts written in MDX
+├── hooks/               # Custom React hooks
+├── lib/                 # Utilities and helper functions
+├── public/              # Static assets (images, fonts, thumbnails)
+├── styles/              # Global and Tailwind CSS
+├── types/               # TypeScript type definitions
+├── next.config.ts       # Next.js configuration
+├── tailwind.config.ts   # Tailwind setup
+└── tsconfig.json        # TypeScript configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site in your browser. -->
 
-## 📝 Content Creation
+## 🚀 Deployment
+This site is deployed using [Vercel](https://vercel.com/).
 
-Blog posts are written in MDX format, blending Markdown with React components. Add new posts under the `content/blog` directory.
+Every commit to the main branch automatically triggers a new build and deployment.
 
-### Example Blog Post
+To deploy your own version:
 
-```mdx
----
-title: 'Understanding React Context'
-date: '2025-01-15'
-summary: 'A deep dive into React Context for state management.'
----
+- Push your repo to GitHub
+- Connect to Vercel
+- Set environment variables (if any)
+- Deploy — done!
 
-React Context simplifies state management...
-```
+## 📬 Contact
 
-## 📄 License
+If you’d like to collaborate or discuss opportunities, feel free to connect!
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- [🌐 Portfolio](https://portfolio-psi-bay-64.vercel.app/)
 
-## 📬 Get in Touch
+- [💼 LinkedIn](https://www.linkedin.com/in/sumedh-badnore/)
 
-Feel free to connect with me:
+- [💻 GitHub](https://github.com/sumedhbadnore)
 
-- [LinkedIn](https://linkedin.com/in/andrechandraputra)
-- [Instagram](https://instagram.com/andrechandraap)
-- [GitHub](https://github.com/andrechandra)
+- [✉️ Email](sumedhbadnore2801@gmail.com)
 
----
+## 🧾 License
 
-Thank you for visiting my portfolio blog. I hope you find something valuable here!
+This project is licensed under the MIT License – feel free to use or adapt the code for your own portfolio.

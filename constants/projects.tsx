@@ -28,6 +28,11 @@ import chatbot1 from '@/public/projects/chatbot/cb-1.png'
 import chatbot2 from '@/public/projects/chatbot/cb-2.png'
 import chatbot3 from '@/public/projects/chatbot/cb-3.png'
 
+// HarmonyViz
+import harmonyvizThumbnail from '@/public/projects/harmonyviz/harmony_thumbnail.png'
+import h1 from '@/public/projects/harmonyviz/h1.png'
+import h2 from '@/public/projects/harmonyviz/h2.png'
+
 import { Project } from '@/types/project'
 import { motion } from 'framer-motion'
 
@@ -217,50 +222,44 @@ export const projects: Project[] = [
       </motion.div>
     ),
   },
-  
-  // {
-  //   href: '',
-  //   repo: 'https://github.com/AndreChops/OrangeBurger',
-  //   title: 'Orange Burger',
-  //   category: 'university',
-  //   description:
-  //     'A restaurant website, where users can make food orders. Also includes admin dashboard, where admin can manage transactions.',
-  //   thumbnail: orangeBurgerThumbnail,
-  //   images: [orangeBurger, orangeBurger2],
-  //   stack: ['PHP', 'Javascript', 'CSS'],
-  //   slug: 'orangeburger',
-  //   content: (
-  //     <motion.div
-  //       initial={{ opacity: 0, y: 40 }}
-  //       animate={{ opacity: 1, y: 0 }}
-  //       transition={{ duration: 0.3 }}
-  //     >
-  //       <p className="font-geist_mono tracking-tighter text-gray-400">
-  //         Orange Burger is a web application developed as a midterm project for
-  //         the Web Programming course during the 4th semester of my university
-  //         studies. The website was designed to simulate a functional restaurant
-  //         platform where users can browse through a menu, customize their
-  //         orders, and place food orders directly through the site.
-  //       </p>
-  //       <p className="font-geist_mono tracking-tighter text-gray-400">
-  //         The project also includes an admin dashboard, allowing restaurant
-  //         administrators to efficiently manage orders and transactions. Through
-  //         the dashboard, admins can track incoming orders, update order
-  //         statuses, and maintain a record of past transactions, ensuring a
-  //         seamless order management experience.
-  //       </p>
-  //       <p className="font-geist_mono tracking-tighter text-gray-400">
-  //         This project not only helped me strengthen my skills in front-end and
-  //         back-end web development but also gave me practical experience in
-  //         building full-stack applications with user authentication, order
-  //         processing, and data management features. The Orange Burger website
-  //         reflects my ability to design and implement user-friendly interfaces
-  //         and robust back-end systems to create a complete and functional web
-  //         solution.
-  //       </p>
-  //     </motion.div>
-  //   ),
-  // },
+  {
+    href: 'https://harmonyviz.vercel.app/',
+    repo: 'https://github.com/sumedhbadnore/harmonyviz',
+    title: 'HarmonyViz',
+    category: 'freelance',
+    description:
+      'A real-time music visualizer built with Next.js, Web Audio API, and Canvas. Transforms live mic input or uploaded tracks into beat-synced visuals with sub-60ms latency and theme presets.',
+    thumbnail: harmonyvizThumbnail,
+    images: [h1, h2],
+    stack: ['Nextjs', 'Tailwindcss', 'Web Audio API', 'Canvas', 'Node.js'],
+    slug: 'harmonyviz',
+    content: (
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <p className="font-geist_mono tracking-tighter text-gray-400">
+          HarmonyViz is a real-time audio visualizer that turns sound into
+          motion. Built with Next.js, Web Audio API, and Canvas, it processes
+          microphone input or uploaded audio to create dynamic,
+          beat-synchronized animations. I designed FFT-based signal analysis to
+          extract pitch and amplitude with under 60 ms latency, ensuring smooth,
+          real-time responsiveness.
+        </p>
+        <p className="font-geist_mono tracking-tighter text-gray-400">
+          The project includes mic toggling, preset audio tracks, and color
+          theme customization, all running client-side for speed and privacy. On
+          the backend, a lightweight Node.js API handles user presets and
+          session persistence. HarmonyViz blends frontend performance
+          optimization with real-time DSP techniques—making music visually
+          tangible. It taught me how thoughtful UX and efficient rendering can
+          merge technology and creativity, echoing the spirit of music tech
+          innovation.
+        </p>
+      </motion.div>
+    ),
+  },
   // {
   //   href: 'https://cv-atm.com/',
   //   repo: '',

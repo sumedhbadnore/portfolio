@@ -225,6 +225,9 @@ export default function TerminalSection() {
           <div className="text-blue-400">vision --open</div>
           <div className="text-blue-400">cachebench --open</div>
           <div className="text-blue-400">shortsy --open</div>
+          <div className="text-blue-400">chatbot --open</div>
+          <div className="text-blue-400">balloontracks --open</div>
+          <div className="text-blue-400">harmonyviz --open</div>
           <div className="text-gray-400 mt-1">
             Tip: type a project command above to see details
           </div>
@@ -247,7 +250,7 @@ export default function TerminalSection() {
           </div>
           <a
             className="text-blue-400 underline"
-            href="#"
+            href="https://facial-recognition-deploy-theta.vercel.app/"
             target="_blank"
             rel="noreferrer"
           >
@@ -256,7 +259,7 @@ export default function TerminalSection() {
           <span className="text-gray-500"> • </span>
           <a
             className="text-blue-400 underline"
-            href="#"
+            href="https://github.com/sumedhbadnore/facial-recognition-deploy"
             target="_blank"
             rel="noreferrer"
           >
@@ -281,7 +284,7 @@ export default function TerminalSection() {
           </div>
           <a
             className="text-blue-400 underline"
-            href="#"
+            href="https://cachebench-sandy.vercel.app/"
             target="_blank"
             rel="noreferrer"
           >
@@ -290,7 +293,7 @@ export default function TerminalSection() {
           <span className="text-gray-500"> • </span>
           <a
             className="text-blue-400 underline"
-            href="#"
+            href="https://github.com/sumedhbadnore/cachebench"
             target="_blank"
             rel="noreferrer"
           >
@@ -315,7 +318,7 @@ export default function TerminalSection() {
           </div>
           <a
             className="text-blue-400 underline"
-            href="#"
+            href="https://url-shortner-three-woad.vercel.app/"
             target="_blank"
             rel="noreferrer"
           >
@@ -324,7 +327,7 @@ export default function TerminalSection() {
           <span className="text-gray-500"> • </span>
           <a
             className="text-blue-400 underline"
-            href="#"
+            href="https://github.com/sumedhbadnore/url-shortner"
             target="_blank"
             rel="noreferrer"
           >
@@ -425,7 +428,8 @@ export default function TerminalSection() {
             hit Enter.
           </div>
           <div className="text-gray-500 mt-1">
-            Need help? <span className="text-yellow-400">game --help</span> | <span className="text-yellow-400">game --quit</span>
+            Need help? <span className="text-yellow-400">game --help</span> |{' '}
+            <span className="text-yellow-400">game --quit</span>
           </div>
         </div>
       ),
@@ -580,8 +584,8 @@ export default function TerminalSection() {
             </div>
           ))}
         </div>
-      )}
-       else if (cmd === 'clear') {
+      )
+    } else if (cmd === 'clear') {
       setTerminalHistory([])
       return
     } else if (cmd === 'game --play') {

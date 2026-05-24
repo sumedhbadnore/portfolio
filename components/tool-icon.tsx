@@ -6,7 +6,7 @@ import {
   SiJavascript as JavascriptIcon,
   SiTypescript as TypescriptIcon,
   SiReact as ReactIcon,
-  SiCss3 as CssIcon,
+  SiCss as CssIcon,
   SiSass as SassIcon,
   SiFigma as FigmaIcon,
   SiUnity as UnityIcon,

@@ -1,4 +1,5 @@
-import { SiGoogledocs, SiGithub, SiLinkedin } from 'react-icons/si'
+import { SiGoogledocs, SiGithub } from 'react-icons/si'
+import { FaLinkedin } from 'react-icons/fa6'
 
 export const heroLinks = [
   {
@@ -16,7 +17,7 @@ export const heroLinks = [
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/sumedh-badnore/',
-    icon: SiLinkedin,
+    icon: FaLinkedin,
     isExternal: true,
   },
 ]

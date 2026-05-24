@@ -6,8 +6,8 @@ import {
   SiJavascript as JavascriptIcon,
   SiTypescript as TypescriptIcon,
   SiPrisma as PrismaIcon,
-  SiAwsamplify as AwsIcon,
 } from 'react-icons/si'
+import { FaAws as AwsIcon } from 'react-icons/fa'
 
 export const techStack = [
   {

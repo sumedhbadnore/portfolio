@@ -379,7 +379,7 @@ export default function TerminalSection() {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠑⠦⡙⠷⠉⢐⡠⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         `}</pre>
-          <span className="text-gray-300">Muffy - "woof....woof...."</span>
+          <span className="text-gray-300">Muffy - woof....woof....</span>
         </>
       ),
     },
@@ -614,7 +614,8 @@ export default function TerminalSection() {
       } else {
         output = (
           <span className="text-red-400">
-            Command not found: {raw}. Type 'help' for available commands.
+            Command not found: {raw}. Type &apos;help&apos; for available
+            commands.
           </span>
         )
       }
@@ -828,10 +829,10 @@ export default function TerminalSection() {
                     {terminalHistory.length === 0 && (
                       <div className="terminal-welcome mb-2">
                         <p className="text-[#55f89f]">
-                          Welcome to Sumedh's Terminal!
+                          Welcome to Sumedh&apos;s Terminal!
                         </p>
                         <p className="text-gray-400">
-                          Type 'help' to see available commands.
+                          Type &apos;help&apos; to see available commands.
                         </p>
                       </div>
                     )}
@@ -942,10 +943,10 @@ export default function TerminalSection() {
                   {terminalHistory.length === 0 && (
                     <div className="terminal-welcome mb-2">
                       <p className="text-[#55f89f]">
-                        Welcome to Sumedh's Terminal!
+                        Welcome to Sumedh&apos;s Terminal!
                       </p>
                       <p className="text-gray-400">
-                        Type 'help' to see available commands.
+                        Type &apos;help&apos; to see available commands.
                       </p>
                     </div>
                   )}

@@ -1,9 +1,22 @@
 export const resumes = {
   workingExperience: [
     {
+      title: 'Software Engineer',
+      location: 'Akoya - Boston, MA',
+      duration: 'Mar 2026 - Present | Full Time',
+      responsibilities: [
+        'Developed full-stack features for Sesame/Admin Console using Go, React, and TypeScript across internal and external workflows.',
+        'Fixed production-impacting issues in bulk uploads, account type updates, audit logs, and provider status management.',
+        'Enabled OpenTelemetry request tracing and validated app-to-OTLP-to-Datadog observability across Sesame services.',
+        'Integrated Statsig feature flags for controlled rollouts, improving release safety across dev, QA, UAT, and production.',
+        'Collaborated with engineering, QA, PM, and platform teams through Jira, Bitbucket PRs, CI/CD pipelines, and release validation.',
+      ],
+      link: 'https://akoya.com/',
+    },
+    {
       title: 'Fullstack Developer Volunteer',
       location: 'CuraJOY - New York',
-      duration: 'Jan 2025 - Present | Full Time',
+      duration: 'Jan 2025 - Mar 2026 | Part Time',
       responsibilities: [
         'Built React and Node.js microservices on AWS Amplify, scaling throughput by 35% for 3,000+ monthly active users.',
         'Optimized PostgreSQL queries and Redis caching, reducing API latency by 30% and improving global data consistency.',

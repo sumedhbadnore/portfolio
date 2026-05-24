@@ -185,20 +185,22 @@ export default function TerminalSection() {
       output: (
         <>
           <div className="text-[#55f89f] font-bold">
-            CuraJOY — Full Stack Developer
+            Akoya — Software Engineer
           </div>
           <div className="text-gray-300">
-            React and Node on AWS Amplify; throughput ↑ 35 percent for 3000 plus
-            users; CI/CD and accessibility wins
+            Building fintech admin platforms with Go, React, and TypeScript;
+            feature flags, observability, audit logging, and cloud-native
+            services across AWS and Kubernetes.
           </div>
           <br />
           <div className="text-[#55f89f] font-bold">
-            Accenture — Software Dev Intern
+            CuraJOY — Full Stack Developer
           </div>
           <div className="text-gray-300">
-            Java microservices and SQL; monitoring automation; logging
-            pipelines; uptime ↑ 20 percent
+            React and Node on AWS Amplify; throughput ↑ 35 percent for 3000+
+            users; CI/CD automation and accessibility improvements.
           </div>
+          <br />
         </>
       ),
     },

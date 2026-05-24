@@ -45,7 +45,7 @@ export default function Home() {
                 href="/experiences#working-experience"
                 className="border-b border-dotted border-white relative w-fit text-white after:absolute after:w-full after:scale-x-0 after:h-[0.05rem] after:bottom-0 after:left-0 after:origin-right after:bg-gradient-to-r after:from-[#55f89f] after:to-[#55f8d5] after:transition-transform after:duration-300 hover:border-transparent hover:after:scale-x-100 hover:after:origin-left"
               >
-                CuraJOY
+                Akoya
               </Link>
             </MotionText>
 
@@ -60,8 +60,8 @@ export default function Home() {
               microservices, or playful side projects that bring ideas to life.
               I balance debugging sessions with my sweet tooth, keeping an eye
               on sugar levels as closely as I monitor server logs. My dog,
-              Muffy, double as my project manager, making sure every
-              sprint ends with tail wags and working code.
+              Muffy, double as my project manager, making sure every sprint ends
+              with tail wags and working code.
             </MotionText>
 
             <MotionElement

@@ -37,7 +37,7 @@ export default function AboutCard() {
               href="/experiences#working-experience"
               className="relative w-fit text-[#55f89f] after:absolute after:w-full after:scale-x-0 after:h-[0.05rem] after:bottom-0 after:left-0 after:origin-right after:bg-gradient-to-r after:from-[#55f89f] after:to-[#55f8d5] after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left"
             >
-              CuraJOY
+              Akoya
             </Link>
           </MotionText>
           <MotionText
@@ -55,9 +55,10 @@ export default function AboutCard() {
             >
               Sumedh
             </MotionText>
-            . Right now, I love building full-stack applications with clean
-            designs, and I pay a lot of attention to performance and
-            accessibility.
+            . I’m a software engineer who enjoys building full-stack
+            applications that are reliable, accessible, and easy to use. I like
+            working across the stack, from clean frontend experiences to backend
+            APIs, cloud systems, observability, and production debugging.
           </MotionText>
         </div>
 
@@ -76,11 +77,11 @@ export default function AboutCard() {
             simpleAnimation={true}
             className="text-gray-400 mb-4 font-geist_mono tracking-tighter"
           >
-            During my undergrad, I wasn’t fully into web development even though
-            I studied computer science. Things changed during internships and
-            grad school projects, I started building apps that solved real
-            problems, from dashboards to cloud systems. That’s when my interest
-            in full-stack engineering really took off.
+            I studied Computer Science during undergrad, but my interest in
+            full-stack engineering really grew through internships, graduate
+            projects, and real-world product work. I started by building
+            dashboards, cloud-based apps, and backend systems that solved
+            practical problems.
           </MotionText>
           <MotionText
             as="p"
@@ -88,12 +89,12 @@ export default function AboutCard() {
             simpleAnimation={true}
             className="text-gray-400 font-geist_mono tracking-tighter"
           >
-            Most of my roles; from Accenture to CuraJOY, pushed me into backend
-            and cloud engineering, working with Java, Node.js, and AWS. But I’ve
-            always carried my love for front-end design and user experience.
-            Now, as a software engineer, I focus on bridging both worlds by
-            crafting apps that are scalable on the backend and delightful on the
-            frontend.
+            Over time, my roles across Accenture, CuraJOY, and Akoya helped me
+            grow across frontend, backend, and cloud engineering. I’ve worked
+            with React, TypeScript, Node.js, Java, Go, AWS, Datadog, and CI/CD
+            workflows. Today, as a Software Engineer at Akoya, I focus on
+            building secure, scalable fintech platforms while keeping
+            performance, accessibility, and user experience at the center.
           </MotionText>
         </div>
 
